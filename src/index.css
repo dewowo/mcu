@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-void: #0B0E14;
+  --color-editorial: #121820;
+  --color-surface: #181F2A;
+  --color-border: #252E3D;
+  --color-parchment: #ECE7DE;
+  --color-ash: #A8B2C1;
+  --color-muted: #5C6880;
+  --color-crimson: #E23636;
+  --color-cyan: #00F0FF;
+  --color-amber: #E5A93C;
+
+  --font-cinzel: 'Cinzel', serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0B0E14;
+  color: #A8B2C1;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0B0E14; }
+::-webkit-scrollbar-thumb { background: #252E3D; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #E5A93C; }
+
+/* Drop cap */
+.drop-cap::first-letter {
+  font-family: 'Cinzel', serif;
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 0.85;
+  float: left;
+  margin-right: 0.12em;
+  margin-top: 0.08em;
+  color: #E5A93C;
+}
+
+/* Prose */
+.prose-chronicle {
+  max-width: 68ch;
+  line-height: 1.85;
+}
+
+.prose-chronicle p {
+  margin-bottom: 1.5rem;
+  color: #A8B2C1;
+}
+
+.prose-chronicle h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ECE7DE;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Pull quote */
+.pull-quote {
+  border-left: 3px solid #E5A93C;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  background: rgba(229,169,60,0.06);
+}
+
+.pull-quote p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ECE7DE;
+  margin: 0;
+}
+
+/* Page transition */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+/* Progress bar */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(to right, #E23636, #E5A93C, #00F0FF);
+  z-index: 9999;
+  transition: width 100ms linear;
+}
